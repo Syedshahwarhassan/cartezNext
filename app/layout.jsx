@@ -1,7 +1,7 @@
 
 import Topnav from "./components/Topnav";
 import Navbar from "./components/MainNav";
-
+import Mainfooter from "./components/Footer";
 import "./globals.css";
 
 
@@ -17,8 +17,11 @@ export default function RootLayout({ children }) {
       <body >
 
       <Topnav/>
+      
       <Navbar/>
-      {children}</body>
+      {children}
+      <Mainfooter/>
+      </body>
     </html>
   );
 }

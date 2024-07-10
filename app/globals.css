@@ -1,4 +1,22 @@
 @tailwind base;
   @tailwind components;
   @tailwind utilities;
-  
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+.card-hover{
+  display:flex;
+  flex-direction: column;
+ 
+  z-index: 5;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  margin-top: 180%;
+  transition: all 1s ease-in-out;
+  height: 100%;
+  width: 100%;
+background-color: rgba(0,0,0,0.3);
+}
+.main-card:hover .card-hover{
+  margin-top: 0%;
+}
