@@ -17,7 +17,7 @@ const getdata = async (id)=>{
     return(
 <div>
 <div  className="tablet:h-500 h-1000 w-full flex-col tablet:flex-row flex flex-wrap justify-evenly">
-<div className="h-1/4 tablet:h-full tablet:w-2/5 w-full p-6">
+<div className="h-1/3 tablet:h-full tablet:w-2/5 w-full p-6">
 <div className="h-full ">
 <Carousel>
 {
@@ -30,7 +30,7 @@ const getdata = async (id)=>{
 </Carousel>
 </div>
 </div>
-<div className=" tablet:h-full h-3/4 tablet:w-3/5 w-full p-6">
+<div className=" tablet:h-full h-2/3 tablet:w-3/5 w-full p-6">
 <div className="flex justify-between ">
 <h2 className="font-outfit font-semibold py-1 px-3 bg-Delight text-white rounded-full text-medium">{Math.floor(data.discountPercentage)}%</h2>
 <h2 className="font-outfit font-semibold py-1 px-3 bg-black rounded-full text-white text-medium">{data.availabilityStatus}</h2>
