@@ -6,7 +6,9 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import PersonIcon from "@mui/icons-material/Person";
 import CloseIcon from "@mui/icons-material/Close";
 import { Navbar } from "flowbite-react";
+import {useSelector} from 'react-redux'
 const MainNav = () => {
+  const item =useSelector((state)=>state.cart)
   return (
     <>
       <div
@@ -35,12 +37,19 @@ const MainNav = () => {
           </div>
         </div>
       </div>
-
+<div id='cart' className='h-full hidden fixed top-0 right-0 w-1/4 bg-white z-30 p-3'>
+<h1 onClick={()=>{document.getElementById('cart').style.display='none'}} className='cursor-pointer  px-3 py-1 my-2 text-xl text-Delight font-bold rounded-full w-fit hover:bg-gray-300'>x</h1>
+<h1 className='text-4xl text-black font-semibold '>Cart</h1>
+<div className='h-3/4 w-full bg-gray-300'>
+Shahwar
+</div>
+<button  className='px-10 py-2 bg-black text-white my-2  cursor-pointer'>Checkout</button>
+</div>
       <Navbar fluid rounded>
         <Navbar.Brand as={Link} href={"/"}>
           <img
             src="/logo.png"
-            className="m-3 md:m-auto h-6 sm:h-9"
+            className="m-3 md:m-auto h-10 sm:h-9"
             alt="Cartez Logo"
           />
         </Navbar.Brand>
@@ -50,10 +59,10 @@ const MainNav = () => {
         onClick={() =>
           (document.getElementById("searchbox").style.display = "block")
         }
-        className="my-6 hover:text-Delight  "
+        className="my-6 hover:text-Delight mx-2 "
       />
       <div className=''>
-      <h1 className='my-4 p-2 mx-0 w-fit font-outfit relative'>Cart<p className='absolute px-1 text-xs  right-0 top-0 bg-red-600 text-white rounded-full'>0</p></h1>
+      <h1 onClick={()=>{document.getElementById('cart').style.display='block'}} className='my-4 mx-2 p-2 cursor-pointer w-fit font-outfit relative'>Cart<p className='absolute px-1 text-xs  right-0 top-0 bg-red-600 text-white rounded-full'>{item.lenght}</p></h1>
 
       </div>
                    </div>

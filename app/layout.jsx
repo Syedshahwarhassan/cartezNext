@@ -3,7 +3,7 @@ import Topnav from "./components/Topnav";
 import Navbar from "./components/MainNav";
 import Mainfooter from "./components/Footer";
 import "./globals.css";
-
+import Prvider from './Redux/Prvider'
 
 
 export const metadata = {
@@ -16,11 +16,13 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body >
 
-      <Topnav/>
+     <Prvider>
+     <Topnav/>
       
-      <Navbar/>
-      {children}
-      <Mainfooter/>
+     <Navbar/>
+     {children}
+     <Mainfooter/>
+     </Prvider>
       </body>
     </html>
   );

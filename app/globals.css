@@ -15,7 +15,13 @@
   transition: all 1s ease-in-out;
   height: 100%;
   width: 100%;
-background-color: rgba(0,0,0,0.3);
+background-color: rgba(56, 45, 45, 0.3);
+}
+.carding{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .main-card:hover .card-hover{
   margin-top: 0%;
