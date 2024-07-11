@@ -46,11 +46,11 @@ const changeimg=(c)=>{
             <div  className="hover:shadow-md m-3 overflow-hidden relative main-card" key={c.id} style={{height:'400px',width:"350px"}}>
            
             <div className="flex justify-center">
-           <Link href={`/products/${c.id}`}> <img  id='card-img' src={hoverimg===c.id?c.images[3]:c.thumbnail} onMouseEnter={()=>{setHoverimg(c.id)}} onMouseLeave={()=>{setHoverimg(null)}} /></Link>
+          <img  id='card-img' src={hoverimg===c.id?c.images[3]:c.thumbnail} onMouseEnter={()=>{setHoverimg(c.id)}} onMouseLeave={()=>{setHoverimg(null)}} />
             </div>
             <div className="flex justify-evenly">
             <div>
-            <h4 id='card-title' className='font-outfit font-semibold'>{c.title}</h4>
+            <Link href={`/products/${c.id}`}>  <h4 id='card-title' className='font-outfit font-semibold'>{c.title}</h4></Link>
             <h6 className="font-outfit font-semibold">
             <Rating>
             <RatingStar />
