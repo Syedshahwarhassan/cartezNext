@@ -4,24 +4,19 @@ import Link from 'next/link'
 import { Button } from 'flowbite-react'
 import Data from './products/page.jsx'
 import './globals.css'
-
+import { Carousel } from "flowbite-react";
 
 const page = () => {
  
   return (
    <div>
-   <div  className='flex flex-wrap justify-between' >
-   <div id='bgimg' style={{height:"500px"}} className={`w-100 overflow-hidden  bg-left bg-auto bg-no-repeat bg-fixed  relative size-full border-1 border-slate-800`}>
-   <img src='./girl1.png' className='bg-cover' style={{height:"540px",width:"100%"}}/>
-   <div className="w-100 absolute z-5 top-0   bg-trans  py-2 border-1 border-slate-600" style={{height:"100%"}}>
-   <div className='p-3 tablet:pt-10 tablet:w-1/2 tablet:m-10 m-5 w-3/4 ' >
-   <h1 className='text-2xl font-outfit tablet:text-4xl desktop:text-6xl text-white m-3  hover:animate-pulse  font-bold'>Your Ultimate Shopping<br/> Destination</h1>
-   <p className='text-xl font-outfit  tablet:text-2xl m-1 text-white'>Discover the best deals on the latest trends in fashion, electronics, and more. Shop now and experience unparalleled convenience and customer service.</p><br/>
-   <Link href='/' className='text-medium m-3 tablet:text-lg  font-bold mx-1  p-3 hover:bg-gray-900 border-0 bg-black text-white' >Shop Now</Link>
-   </div>
-    </div>
-   </div>
-   
+   <div className="h-500">
+   <Carousel>
+     <img src="./slider/1.png" alt="..." />
+     <img src="./slider/2.png" alt="..." />
+     <img src="./slider/3.png" alt="..." />
+ 
+   </Carousel>
  </div>
 
  <div className="p-5 m-2 ">

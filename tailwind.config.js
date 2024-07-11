@@ -12,6 +12,7 @@ export const theme = {
   extend: {
     height: {
       '500': '600px',
+      
       '1000':'1000px',
     },
     backgroundImage: {
