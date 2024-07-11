@@ -4,7 +4,8 @@ import Link from 'next/link'
 import { Button } from 'flowbite-react'
 import Data from './products/page.jsx'
 import './globals.css'
-
+import { Carousel } from "flowbite-react";
+import { reviews } from './Data/reviews.jsx'
 
 const page = () => {
  
@@ -51,6 +52,26 @@ const page = () => {
 <Link href='/' className='text-center p-3 font-semibold font-outfit text-2xl bg-Delight text-white hover:bg-black'>View All</Link>
 </div>
 </div>
+<div className='bg-red-200 rounded-xl m-5 py-5'>
+<h1 className='text-6xl font-bold text-gray-600 text-center  before:w-10 relative before:absolute before:text-center before:mt-16 before:mr-5   before:border-2 before:border-red-700'>What people's <span className='text-red-700'>thinks</span></h1>
+<div className="h-96">
+<Carousel>
+{
+  reviews.map((c)=>{
+    return(
+      <div className="flex h-full items-center py-5 flex-col justify-center ">
+    <img src={c.image} alt={c.name}  className='rounded-full my-2'/>
+    <h2 className='text-xl font-semibold my-2'>{c.name}</h2>
+    <p>{c.review}</p>
+      </div>
+    )
+  })
+}
+
+</Carousel>
+</div>
+</div>
+
 <div className='p-10 bg-gray-300 subscribe flex flex-col items-center'>
 
 <h1 className='text-4xl text-blue-900 pt-6 text-center font-semibold font-outfit'>Subscribe To Get Discount Offers</h1>

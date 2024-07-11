@@ -40,11 +40,25 @@ const MainNav = () => {
         <Navbar.Brand as={Link} href={"/"}>
           <img
             src="/logo.png"
-            className="m-3 md:m-auto  h-6 sm:h-9"
+            className="m-3 md:m-auto h-6 sm:h-9"
             alt="Cartez Logo"
           />
         </Navbar.Brand>
+        <div className="flex md:order-2">
+        <div className='flex'>
+        <SearchIcon
+        onClick={() =>
+          (document.getElementById("searchbox").style.display = "block")
+        }
+        className="my-6 hover:text-Delight  "
+      />
+      <div className=''>
+      <h1 className='my-4 p-2 mx-0 w-fit font-outfit relative'>Cart<p className='absolute px-1 text-xs  right-0 top-0 bg-red-600 text-white rounded-full'>0</p></h1>
+
+      </div>
+                   </div>
         <Navbar.Toggle />
+      </div>
         <Navbar.Collapse>
           <Navbar.Link href="#" className=" my-4 mx-0 font-outfit">
             Home
@@ -64,19 +78,9 @@ const MainNav = () => {
           <Navbar.Link className=" my-4 mx-0 font-outfit" href="#">
             Contact
           </Navbar.Link>
+
           <Navbar.Link className=" my-4 mx-0 font-outfit" href="#">
-            <SearchIcon
-              onClick={() =>
-                (document.getElementById("searchbox").style.display = "block")
-              }
-              className="mx-3 hover:text-Delight  "
-            />
-          </Navbar.Link>
-          <Navbar.Link className=" my-4 mx-0 font-outfit" href="#">
-            <ShoppingCartIcon className=" hover:text-Delight " />
-          </Navbar.Link>
-          <Navbar.Link className=" my-4 mx-0 font-outfit" href="#">
-            <PersonIcon className=" hover:text-Delight  " />
+          <h1 className="my-4 mx-0 font-outfit">Login</h1>
           </Navbar.Link>
         </Navbar.Collapse>
       </Navbar>
@@ -84,4 +88,4 @@ const MainNav = () => {
   );
 };
 
-export default MainNav;
+export default MainNav
