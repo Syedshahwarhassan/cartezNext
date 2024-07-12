@@ -44,7 +44,11 @@ const changeimg=(c)=>{
 
     return(
             <div  className="hover:shadow-md m-3 overflow-hidden relative main-card" key={c.id} style={{height:'400px',width:"350px"}}>
-           
+           <div className='card-hover'>
+           <button   className='p-3 mb-3 mt-10 bg-red-500 text-xl font-outfit text-white hover:bg-trans w-fit hover:text-red-500 border-2 border-red-500'>Add to Cart</button>
+           <Link href={`/`} className='p-3 m-3 bg-gray-700 text-xl font-outfit text-white hover:bg-trans w-fit hover:text-white border-2 border-gray-700 hover:border-white'>Buy Now</Link>
+          
+           </div>
             <div className="flex justify-center">
           <img  id='card-img' src={hoverimg===c.id?c.images[3]:c.thumbnail} onMouseEnter={()=>{setHoverimg(c.id)}} onMouseLeave={()=>{setHoverimg(null)}} />
             </div>
