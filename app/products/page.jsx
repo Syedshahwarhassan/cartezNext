@@ -42,6 +42,7 @@ const changeimg=(c)=>{
         <div className="p-3 m-2 flex flex-wrap justify-evenly">
 { list &&  list.slice(0,9).map((c)=>{
 
+    
     return(
             <div  className="hover:shadow-md m-3 overflow-hidden relative main-card" key={c.id} style={{height:'400px',width:"350px"}}>
            <div className='card-hover'>
