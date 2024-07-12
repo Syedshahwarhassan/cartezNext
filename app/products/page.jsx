@@ -3,9 +3,10 @@ import Link from "next/link";
 import { Rating, RatingStar } from "flowbite-react";
 import {useState , useEffect} from  'react'
 import '../globals.css'
-
+import {useDispatch} from 'react-redux'
+import {addcart} from '../Redux/Cartslice'
 export default  function Data(){
-    // const dispatch=useDispatch();
+     const dispatch=useDispatch();
 
 
     useEffect(() =>{
@@ -33,20 +34,20 @@ export default  function Data(){
         },[]);
 const [list,setList]=useState();
 const [hoverimg,setHoverimg]=useState(null);
-const changeimg=(c)=>{
-    document.getElementById('card-img').src=c[1];
-    console.log('Change Image')
+const addtocart=(c)=>{
+  dispatch(addcart(c))
+  alert("Thanks for cart")
 }
 
     return(
         <div className="p-3 m-2 flex flex-wrap justify-evenly">
 { list &&  list.slice(0,9).map((c)=>{
 
-    
+
     return(
             <div  className="hover:shadow-md m-3 overflow-hidden relative main-card" key={c.id} style={{height:'400px',width:"350px"}}>
            <div className='card-hover'>
-           <button   className='p-3 mb-3 mt-10 bg-red-500 text-xl font-outfit text-white hover:bg-trans w-fit hover:text-red-500 border-2 border-red-500'>Add to Cart</button>
+           <button onClick={()=>addtocart(c)}  className='p-3 mb-3 mt-10 bg-red-500 text-xl font-outfit text-white hover:bg-trans w-fit hover:text-red-500 border-2 border-red-500'>Add to Cart</button>
            <Link href={`/`} className='p-3 m-3 bg-gray-700 text-xl font-outfit text-white hover:bg-trans w-fit hover:text-white border-2 border-gray-700 hover:border-white'>Buy Now</Link>
           
            </div>

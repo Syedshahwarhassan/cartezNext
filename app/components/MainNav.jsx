@@ -37,7 +37,7 @@ const MainNav = () => {
           </div>
         </div>
       </div>
-<div id='cart' className='h-full hidden fixed top-0 right-0 w-1/4 bg-white z-30 p-3'>
+<div id='cart' className='h-full hidden fixed top-0 right-0 w-full tablet:w-1/4 bg-white z-30 p-3'>
 <h1 onClick={()=>{document.getElementById('cart').style.display='none'}} className='cursor-pointer  px-3 py-1 my-2 text-xl text-Delight font-bold rounded-full w-fit hover:bg-gray-300'>x</h1>
 <h1 className='text-4xl text-black font-semibold '>Cart</h1>
 <div className='h-3/4 w-full bg-gray-300'>
@@ -49,7 +49,7 @@ Shahwar
         <Navbar.Brand as={Link} href={"/"}>
           <img
             src="/logo.png"
-            className="m-3 md:m-auto h-10 sm:h-9"
+            className="m-3 md:m-auto h-5 sm:h-9"
             alt="Cartez Logo"
           />
         </Navbar.Brand>
@@ -62,7 +62,7 @@ Shahwar
         className="my-6 hover:text-Delight mx-2 "
       />
       <div className=''>
-      <h1 onClick={()=>{document.getElementById('cart').style.display='block'}} className='my-4 mx-2 p-2 cursor-pointer w-fit font-outfit relative'>Cart<p className='absolute px-1 text-xs  right-0 top-0 bg-red-600 text-white rounded-full'>{item.lenght}</p></h1>
+      <h1 onClick={()=>{document.getElementById('cart').style.display='block'}} className='my-4 mx-2 p-2 cursor-pointer w-fit font-outfit relative'>Cart<p className='absolute px-1 text-xs  right-0 top-0 bg-red-600 text-white rounded-full'>{item.lenght>0?item.lenght:0}</p></h1>
 
       </div>
                    </div>
