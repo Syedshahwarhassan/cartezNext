@@ -5,10 +5,18 @@ import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import PersonIcon from "@mui/icons-material/Person";
 import CloseIcon from "@mui/icons-material/Close";
+import DeleteIcon from '@mui/icons-material/Delete';
+import {remove} from '../Redux/Cartslice'
 import { Navbar } from "flowbite-react";
-import {useSelector} from 'react-redux'
+import { useState} from 'react'
+import {useSelector ,useDispatch} from 'react-redux'
 const MainNav = () => {
   const item =useSelector((state)=>state.cart)
+  const dispatch=useDispatch();
+  const [total,setTotal]=useState();
+  const removeitem=(id)=>{
+    dispatch(remove(id))
+  }
   return (
     <>
       <div
@@ -40,8 +48,25 @@ const MainNav = () => {
 <div id='cart' className='h-full hidden fixed top-0 right-0 w-full tablet:w-1/4 bg-white z-30 p-3'>
 <h1 onClick={()=>{document.getElementById('cart').style.display='none'}} className='cursor-pointer  px-3 py-1 my-2 text-xl text-Delight font-bold rounded-full w-fit hover:bg-gray-300'>x</h1>
 <h1 className='text-4xl text-black font-semibold '>Cart</h1>
-<div className='h-3/4 w-full bg-gray-300'>
-Shahwar
+<div className='h-3/5 w-full bg-gray-300 overflow-auto'>
+{
+  item.map((c)=>{
+return(
+<div className="m-2 p-2 flex justify-between  bg-white rounded " style={{height:'120px',width:"90%"}}>
+<div className='flex '>
+<img height={'70px'} src={c.images[0]}/>
+<div>
+<h6 className="font-outfit text-sm font-semibold">{c.title}</h6>
+<p className="font-outfit text-xs">{c.price}</p>
+</div>
+</div>
+<div className="flex justify-center">
+<DeleteIcon className="hover:text-Delight" onClick={()=>removeitem(c.id)}/>
+</div>
+</div>
+)
+  })
+}
 </div>
 <button  className='px-10 py-2 bg-black text-white my-2  cursor-pointer'>Checkout</button>
 </div>
@@ -62,7 +87,7 @@ Shahwar
         className="my-6 hover:text-Delight mx-2 "
       />
       <div className=''>
-      <h1 onClick={()=>{document.getElementById('cart').style.display='block'}} className='my-4 mx-2 p-2 cursor-pointer w-fit font-outfit relative'>Cart<p className='absolute px-1 text-xs  right-0 top-0 bg-red-600 text-white rounded-full'>{item.lenght>0?item.lenght:0}</p></h1>
+      <h1 onClick={()=>{document.getElementById('cart').style.display='block'}} className='my-4 mx-2 p-2 cursor-pointer w-fit font-outfit relative'>Cart<p className='absolute px-1 text-xs  right-0 top-0 bg-red-600 text-white rounded-full'>{item.length>0?item.length:0}</p></h1>
 
       </div>
                    </div>
